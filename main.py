@@ -1,5 +1,5 @@
 from parse_data import parse
-from funcs import delete_photo, distance, find_next_similar
+from funcs import  distance, find_next_similar
 from write_data import write
 
 
