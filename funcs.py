@@ -6,18 +6,20 @@ def distance(photo_a, photo_b):
     return len(set(tags_a).intersection(set(tags_b)))
 
 def find_next_similar(photo, photos:list):
-    data = copy.deepcopy(photos)
-    del data[data.index(photo)]
-    similar = 0
-    dist = -1
+    
+    del photos[photos.index(photo)]
+    result = []
     for var in data:
         cur_dist = distance(photo, var)
-        if cur_dist> dist:
-            similar = var
-            dist = cur_dist
-    return similar
-data = parse('data/a_example.txt')
-s = find_next_similar(data[0], data)
-k = 0
+        if cur_dist !=0:
+            result.append((cur_dist, var))
+    result.sort(key = lambda x: x[0])
+    return result
+
+data = parse('data/b_lovely_landscapes.txt')
+for i in range(len(data)):
+    s = find_next_similar(data[i], data)
+    k = 0
+
 
 
