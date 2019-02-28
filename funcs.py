@@ -15,6 +15,9 @@ def find_next_similar(photo, photos:list):
             result.append((cur_dist, var))
     result.sort(key = lambda x: x[0])
     return result
+def delete_photo(photo, photos):
+    pass
+
 
 data = parse('data/b_lovely_landscapes.txt')
 for i in range(len(data)):
